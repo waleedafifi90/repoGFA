@@ -24,11 +24,11 @@ public class BaseTest {
 
 	@BeforeClass
 	public static void driverSetUp() {
-		caps.setCapability("deviceName", "Masa");
-		caps.setCapability("udid", "RF8NC08PAMF");
+		caps.setCapability("deviceName", "Pixel1");
+//		caps.setCapability("udid", "RF8NC08PAMF");
 		caps.setCapability("platformName", "Android");
-		caps.setCapability("platformVersion", "11");
-		caps.setCapability("app", "C:\\Users\\MSI\\Downloads\\app.apk");
+		caps.setCapability("platformVersion", "12");
+		caps.setCapability("app", "/Users/waleedafifi/Downloads/R365dev.apk");
 
 		try {
 			driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), caps);
@@ -43,7 +43,7 @@ public class BaseTest {
 	}
 
 	public static void waitVisibilityOf(MobileElement element){
-		WebDriverWait webDriverWait = new WebDriverWait(driver, 40);
+		WebDriverWait webDriverWait = new WebDriverWait(driver, 100);
 		webDriverWait.until(ExpectedConditions.visibilityOf(element));
 	}
 }

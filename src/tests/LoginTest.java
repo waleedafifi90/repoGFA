@@ -12,7 +12,7 @@ public class LoginTest extends BaseTest{
 	@Test
 	public void loginToApp() throws Throwable {
 		loginActions
-		.typeInUserName("m.naji13")
+		.typeInUserName("tester3")
 		.clickNextButton()
 		.typeInPassword("123")
 		.clickLoginButton(); 
