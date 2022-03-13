@@ -34,4 +34,45 @@ public class InventoryCount extends BaseTest {
 	@AndroidFindBy(id = "btn_continue")
 	MobileElement continueButton;
 	
+	@AndroidFindBy(className = "android.view.ViewGroup")
+	List<MobileElement> templateItems;
+	
+	@AndroidFindBy(id = "action_toggle_edit")
+	MobileElement editButton;
+	
+	@AndroidFindBy(id = "btn_add_item")
+	MobileElement addItemBtn;
+	
+	@AndroidFindBy(id = "v_select_item_button")
+	MobileElement selectItemDropDown; 
+	
+	@AndroidFindBy(id = "et_item_position")
+	MobileElement itemPositionInput;
+	
+	@AndroidFindBy(id = "et_search")
+	MobileElement searchField;
+	
+	@AndroidFindBy(id = "iv_selected_icon")
+	MobileElement selectedIcon;
+	
+	@AndroidFindBy(id = "tv_item_name")
+	List<MobileElement> itemName;
+	
+	@AndroidFindBy(id = "tv_selected_item_name")
+	MobileElement selectedItemName; 
+	
+	@AndroidFindBy(id = "action_bar_root")
+	MobileElement promptAddItemScreen; 
+	
+	@AndroidFindBy(id = "btn_edit")
+	MobileElement addItemToList;
+	
+	@AndroidFindBy(id = "snackbar_text")
+	MobileElement AlertMessage;
+	
+	@AndroidFindBy(id = "iv_status")
+	List<MobileElement> itemStatus; 
+	
+	@AndroidFindBy(id = "nav_view")
+	MobileElement navigationView;
 }

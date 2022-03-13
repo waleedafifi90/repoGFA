@@ -43,7 +43,7 @@ public class BaseTest {
 	}
 
 	public static void waitVisibilityOf(MobileElement element){
-		WebDriverWait webDriverWait = new WebDriverWait(driver, 40);
+		WebDriverWait webDriverWait = new WebDriverWait(driver, 100);
 		webDriverWait.until(ExpectedConditions.visibilityOf(element));
 	}
 }

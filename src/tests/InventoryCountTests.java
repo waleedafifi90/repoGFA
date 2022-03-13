@@ -13,17 +13,33 @@ public class InventoryCountTests extends BaseTest {
 	@Test
 	public void addNewInventoryCount() throws Throwable {
 		login.loginToApp();
-		inventoryAction.clickMenuButton()
-					   .navigateToInventoryCount()
-					   .navigateToSelectLocation();
 
-		inventoryAssertion.verifyAddNewInventoryCountScreen();
+		inventoryAction.clickMenuButton();
+		inventoryAssertion.verifyNavigationIsDisplayed();
 		
-		inventoryAction.selectLocation()
+		inventoryAction.navigateToInventoryCount();
+//		inventoryAssertion.verifyAddNewInventoryCountScreen();
+		
+		inventoryAction.selectFirstItem()
+					   .selectionFirstOnTheList()
+					   .toggelEditDoneButton()
+					   .clickAddItemButton()
+					   .clickSelectItemDropDown()
+					   .searchForItem("Appium Item 14g")
 					   .selectionFirstOnTheList()
 					   .clickContinueButton()
-					   .selectTemplate()
-					   .selectionFirstOnTheList()
-					   .clickContinueButton();
+					   .clickAddItemButton()
+					   .addItemToList()
+					   .toggelEditDoneButton();
+//					   .navigateToSelectLocation();
+
+//		inventoryAssertion.verifyAddNewInventoryCountScreen();
+		
+//		inventoryAction.selectLocation()
+//					   .selectionFirstOnTheList()
+//					   .clickContinueButton()
+//					   .selectTemplate()
+//					   .selectionFirstOnTheList()
+//					   .clickContinueButton();
 	};
 }

@@ -4,7 +4,9 @@ import tests.BaseTest;
 
 public class InventoryCountActions {
 	
-	InventoryCount page =new  InventoryCount();
+	InventoryCount page = new  InventoryCount();
+	
+	public static int itemCounter = 0;
 
 	public InventoryCountActions clickMenuButton() {
 		BaseTest.waitVisibilityOf(page.drawerButton);
@@ -15,6 +17,9 @@ public class InventoryCountActions {
 	public InventoryCountActions navigateToInventoryCount() {
 		BaseTest.waitVisibilityOf(page.inventoryCountNavigationButton);
 		page.inventoryCountNavigationButton.click();
+		itemCounter = page.templateItems.size();
+
+//		System.out.println(page.templateItems.size());
 		return this;
 	}
 	
@@ -49,5 +54,40 @@ public class InventoryCountActions {
 		page.templateListPicker.click();
 		return this;
 	}
+	
+	public InventoryCountActions selectFirstItem() {
+		page.templateItems.get(5).click();
+		return this;
+	}
+	
+	public InventoryCountActions toggelEditDoneButton() throws InterruptedException {
+		Thread.sleep(5000);
+		BaseTest.waitVisibilityOf(page.editButton);
+		page.editButton.click();
+		return this;
+	}
+	
+	public InventoryCountActions clickAddItemButton() {
+		page.addItemBtn.click();
+		return this;
+	}
+	
+	public InventoryCountActions clickSelectItemDropDown() {
+		page.selectItemDropDown.click();
+		return this;
+	}
 
+	public InventoryCountActions searchForItem(String text) {
+		BaseTest.waitVisibilityOf(page.searchField);
+		page.searchField.click();
+		page.searchField.clear();
+		page.searchField.sendKeys(text);
+		BaseTest.driver.hideKeyboard();
+		return this;
+	}
+	
+	public InventoryCountActions addItemToList() {
+		page.addItemToList.click();
+		return this;
+	}
 }
