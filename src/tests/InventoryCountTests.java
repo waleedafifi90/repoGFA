@@ -18,10 +18,13 @@ public class InventoryCountTests extends BaseTest {
 		inventoryAssertion.verifyNavigationIsDisplayed();
 		
 		inventoryAction.navigateToInventoryCount();
-//		inventoryAssertion.verifyAddNewInventoryCountScreen();
+		inventoryAssertion.verifyInProgressIsFocused();
+		inventoryAssertion.verifyInventoryScreenHeader();
 		
-		inventoryAction.selectFirstItem()
-					   .selectionFirstOnTheList()
+		inventoryAction.selectFirstItem();
+		inventoryAssertion.verifyInventoryScreenHeaderTitle();
+		
+		inventoryAction.selectionFirstOnTheList()
 					   .toggelEditDoneButton()
 					   .clickAddItemButton()
 					   .clickSelectItemDropDown()
