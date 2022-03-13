@@ -7,6 +7,7 @@ public class InventoryCountActions {
 	InventoryCount page = new  InventoryCount();
 	
 	public static int itemCounter = 0;
+	static String templateName;
 
 	public InventoryCountActions clickMenuButton() {
 		BaseTest.waitVisibilityOf(page.drawerButton);
@@ -14,12 +15,12 @@ public class InventoryCountActions {
 		return this;
 	}
 	
-	public InventoryCountActions navigateToInventoryCount() {
+	public InventoryCountActions navigateToInventoryCount() throws InterruptedException {
 		BaseTest.waitVisibilityOf(page.inventoryCountNavigationButton);
 		page.inventoryCountNavigationButton.click();
-		itemCounter = page.templateItems.size();
-
 //		System.out.println(page.templateItems.size());
+		Thread.sleep(2000);
+		itemCounter = 5;
 		return this;
 	}
 	
@@ -56,6 +57,7 @@ public class InventoryCountActions {
 	}
 	
 	public InventoryCountActions selectFirstItem() {
+		templateName = page.templateName.get(4).getText();
 		page.templateItems.get(5).click();
 		return this;
 	}

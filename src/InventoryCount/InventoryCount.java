@@ -75,4 +75,17 @@ public class InventoryCount extends BaseTest {
 	
 	@AndroidFindBy(id = "nav_view")
 	MobileElement navigationView;
+	
+	@AndroidFindBy(accessibility = "In progress")
+	MobileElement inProgressTab;
+	
+//	@AndroidFindBy(xpath = "//*[contains(@text, 'Inventory Counts')]")
+	@AndroidFindBy(className = "android.widget.TextView")
+	List<MobileElement> toolbarTitle; 
+	
+	@AndroidFindBy(id = "tv_inventory_name")
+	List<MobileElement> templateName; 
+	
+	@AndroidFindBy(id = "tv_items")
+	List<MobileElement> storageLocationItemCount; 
 }
