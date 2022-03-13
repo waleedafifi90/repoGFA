@@ -1,5 +1,7 @@
 package InventoryCount;
 
+import org.openqa.selenium.WebElement;
+
 import tests.BaseTest;
 
 public class InventoryCountActions {
@@ -91,5 +93,27 @@ public class InventoryCountActions {
 	public InventoryCountActions addItemToList() {
 		page.addItemToList.click();
 		return this;
+	}
+	
+	public int getItemsCount() {
+		return page.containerItems.size();
+	}
+	
+	public int getItemInStorageLocation() {
+		String text = page.storageLocationItemCount.get(0).getText();
+		text = text.split(" ")[0];
+		int num = Integer.parseInt(text);
+		return num;
+	}
+	
+	public boolean getListRadioStatus() {
+		for(int i = 0; i < page.itemStatus.size(); i++) {
+			WebElement el = (WebElement) page.itemStatus.get(i);
+			System.out.println("Radio Status is: " + page.itemStatus.get(i).isSelected());
+			if(page.itemStatus.get(i).isSelected()) {
+				return true;
+			}			
+		}
+		return false; 
 	}
 }

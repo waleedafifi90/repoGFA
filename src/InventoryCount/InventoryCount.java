@@ -88,4 +88,10 @@ public class InventoryCount extends BaseTest {
 	
 	@AndroidFindBy(id = "tv_items")
 	List<MobileElement> storageLocationItemCount; 
+	
+	@AndroidFindBy(id = "tv_item_position_max")
+	MobileElement maxPosition;
+	
+	@AndroidFindBy(id = "btn_remove")
+	MobileElement removeButton;
 }
